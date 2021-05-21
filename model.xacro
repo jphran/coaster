@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Coaster">
+
+    <!-- CONSTANTS -->
+    <xacro:property name="deck_width" value="0.185" />
+    <xacro:property name="deck_length" value="0.777" />
+    <xacro:property name="deck_height" value="0.1" />
+
+    <!-- LINKS -->
+    <link name="deck_link">
+        <visual>
+            <geometry>
+                <rectangle width="${deck_width}" length="${deck_length}" height="${deck_height}"/>
+                <mesh filename="file://coaster/meshes/skateboard_mesh.dae" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <rectangle width="${deck_width}" length="${deck_length}" height="${deck_height}"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>
